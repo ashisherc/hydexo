@@ -1,0 +1,22 @@
+{
+    "name": "hydexo",
+    "version": "1.0.0",
+    "description": "A gorgeous responsive theme for Hexo blog framework",
+    "authors": [
+        "Louis Barranqueiro",
+        "Ashish Prajapati"
+    ],
+    "license": "GNU General Public License v3.0",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "source/_bower_components/",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "fontawesome": "~4.6.0",
+        "jquery": "~2.1.3",
+        "fancybox": "~2.1.5"
+    }
+}
