@@ -71,6 +71,32 @@
             margin-top: 5px;
         }
     }
+
+    // Social icons
+    ul.sidebar-social {
+        padding: 0;
+        margin:  0 0 20px 0;
+
+        li.sidebar-social-button {
+            display:     inline;
+
+            .sidebar-social-link {
+                color:   map-get($sidebar, color);
+
+                &:hover,
+                &:active {
+                    text-decoration: none;
+                    color:           lighten(map-get($sidebar, color), 35);
+                }
+            }
+            .sidebar-social-icon{
+                border-bottom: 1px solid;
+            }
+        }
+        &:first-child {
+            margin-top: 5px;
+        }
+    }
 }
 
 // Define sidebar behavior configured in `_config.yml` for small screen

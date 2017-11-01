@@ -40,6 +40,31 @@
             }
         }
     }
+
+    // Social Icons 
+    ul.sidebar-social {
+        li.sidebar-social-button {
+            text-align: center;
+            display: block;
+
+            .sidebar-social-link {
+                text-align: center;
+                width:      100%;
+
+                .sidebar-social-icon {
+                    font-size:      2rem;
+                    display:        inline-block;
+                    text-align:     center;
+                    width:          30px;
+                    height:         30px;
+                    line-height:    30px;
+                    padding-top:    0;
+                    vertical-align: middle;
+                    border: none;
+                }
+            }
+        }
+    }
     // Used to animate the sidebar (pushed effect)
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, md-screen-width)}, 0, 0), 'webkit' 'moz');
@@ -102,6 +127,33 @@
             }
         }
     }
+
+    // Social
+    ul.sidebar-social {
+        li.sidebar-social-button {
+            text-align: left;
+
+            .sidebar-social-link {
+                text-align:   left;
+                width:        auto;
+                padding-left: 23px;
+                padding-top:  0;
+
+                // Font-awesome icon
+                .sidebar-social-icon {
+                    font-size:      2rem;
+                    display:        inline-block;
+                    text-align:     center;
+                    width:          30px;
+                    height:         30px;
+                    line-height:    30px;
+                    padding-top:    0;
+                    vertical-align: middle;
+                    margin-right:   15px;
+                }
+            }
+        }
+    } 
     // Used to animate the sidebar (pushed effect)
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, lg-screen-width)}, 0, 0), 'webkit' 'moz');
@@ -193,6 +245,39 @@
             }
         }
     }
+
+        // Buttons
+        ul.sidebar-social {
+            width:          49%;
+            vertical-align: top;
+            display:        inline-block;
+    
+            li.sidebar-social-button {
+                text-align: left;
+                box-sizing: border-box;
+                .sidebar-social-link {
+                    text-align:  left;
+                    width:       auto;
+                    padding-top: 0;
+                    white-space: nowrap;
+                    // Font-awesome icon
+                    .sidebar-social-icon {
+                        font-size:      2rem;
+                        float:          left;
+                        text-align:     center;
+                        width:          30px;
+                        height:         35px;
+                        line-height:    35px;
+                        padding-top:    0;
+                        vertical-align: middle;
+                        margin-right:   15px;
+                    }
+                }
+                &:nth-child(odd) {
+                    padding-right: 20px;
+                }
+            }
+        }
     // Used to animate the sidebar (pushed effect)
     &.pushed {
         @include prefix(transform, translate3d(#{map-get($sidebar, xlg-screen-width)}, 0, 0), 'webkit' 'moz');
