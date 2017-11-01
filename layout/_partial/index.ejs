@@ -60,9 +60,13 @@
                             <%= __('post.go_to_website') %>
                         </a>
                     <% } else if (__('post.read_more')) { %>
-                        <a href="<%- url_for(post.path) %>" class="postShorten-excerpt_link link">
-                            <%- __('post.read_more') %>
-                        </a>
+                        ...
+                        <p>
+                            <a href="<%- url_for(post.path) %>" class="postShorten-excerpt_link link">
+                                <%- __('post.read_more') %>
+                                <i class="fa fa-arrow-right"></i>
+                            </a>
+                        </p>
                     <% } %>
                 </div>
             <% } else { %>
