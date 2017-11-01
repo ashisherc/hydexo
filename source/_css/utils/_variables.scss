@@ -149,8 +149,9 @@ $sidebar: (
     'md-screen-width':  75px,
     'lg-screen-width':  250px,
     'xlg-screen-width': 500px,
-    'background':       rgba(17, 26, 35, 0),
-    'color':            #ebebeb
+    // 'background':       rgba(17, 26, 35, 0),
+    'color':            #ebebeb,
+    'background-image': url(/assets/images/cover.jpg)
 );
 
 // Main
@@ -243,7 +244,7 @@ $pagination-height: 60px;
 
 // Post thumbnail image
 // Width and height of post's thumbnail image
-$post-thumbnail-image-width: 140px;
+$post-thumbnail-image-width: 0px;
 
 // Tooltip
 $tooltip: (

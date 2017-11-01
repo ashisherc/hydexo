@@ -11,6 +11,11 @@
 <% } %>
 <nav id="sidebar" data-behavior="<%= sidebarBehavior %>">
     <div class="sidebar-container">
+        <div class="sidebar-header">
+            <div id="close-button">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>                
+            </div>
+        </div>
         <% if (authorPicture) { %>
             <div class="sidebar-profile">
                 <a href="<%- url_for('/') %>">
