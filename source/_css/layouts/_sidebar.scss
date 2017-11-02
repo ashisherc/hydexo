@@ -75,7 +75,7 @@
     // Social icons
     ul.sidebar-social {
         padding: 0;
-        margin:  0 0 20px 0;
+        margin:  100px 0 20px 0;
 
         li.sidebar-social-button {
             display:     inline;
@@ -91,6 +91,10 @@
             }
             .sidebar-social-icon{
                 border-bottom: 1px solid;
+                border-bottom-color: rgba(255,255,255,0.2);
+            }
+            .sidebar-social-icon:hover{
+                border-bottom-color: #fff;
             }
         }
         &:first-child {
