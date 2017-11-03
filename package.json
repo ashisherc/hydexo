@@ -1,6 +1,6 @@
 {
   "name": "hydexo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A gorgeous responsive theme for Hexo blog framework, fork of a great work by Louis Barranqueiro",
   "main": "Gruntfile.js",
   "scripts": {
