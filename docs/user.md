@@ -1,14 +1,10 @@
 # User documentation #
 
-A gorgeous responsive theme for Hexo blog framework 
+A gorgeous responsive theme Hydexo for Hexo blog framework, fork of a great work by [Louis Barranqueiro](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak). Sliding sidebar and UI improvements.
 
-[![Tranquilpeak](http://d1u9biwaxjngwg.cloudfront.net/showcases/showcase-v1.10.jpg)](http://louisbarranqueiro.github.io/hexo-theme-tranquilpeak)
+The documentation for Hydexo is in progress, meanwhile you can go through this documentation from Louis Barranqueiro.
 
-Tranquilpeak theme is compatible with Hexo v3.0.x. The theme is compatible with higher versions of Hexo but these versions have some bugs with generation of relative urls so I recommend to use Hexo 3.0.x for the moment.
-
-This documentation will help you to install tranquilpeak-hexo-theme and configure it to use all features which it provides.  
-
-If you want to report a bug or ask a question, [create an issue](https://github.com/LouisBarranqueiro/tranquilpeak-hexo-theme/issues/new).
+If you want to report a bug or ask a question, [create an issue](https://github.com/ashisherc/hydexo/issues/new).
 
 ## Summary ##
 
@@ -21,7 +17,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
     * [Disable relative links](#disable-relative-links)
     * [Enable RSS feed](#enable-rss-feed)
     * [Define global keywords](#define-global-keywords)
-- [Tranquilpeak configuration](#tranquilpeak-configuration)
+- [Hydexo configuration](#hydexo-configuration)
     - [Language configuration](#language-configuration)
     - [Theme configuration](#theme-configuration)
         * [Sidebar](#sidebar)
@@ -58,14 +54,15 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## General ##
 
-- **Author** : Louis Barranqueiro
-- **Version** : 1.10.0
+- **Author** : Louis Barranqueiro, Ashish Prajapati
+- **Version** : 1.0.0
 - **Compatibility** : Node v4 or later, Hexo v3.0.0 or later
 
 ## Features ##
 
 **General features :**  
 
+- Sliding Sidebar
 - Fully responsive
 - Optimized for tablets & mobiles
 - Configurable menu of the sidebar
@@ -78,7 +75,7 @@ If you want to report a bug or ask a question, [create an issue](https://github.
   
 **Posts features :**  
 
-- Thumbnail image
+- Reading time
 - Cover image
 - Responsive videos & images
 - Sharing options
@@ -105,18 +102,18 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Download the latest version built and ready for production here : [hexo-theme-tranquilpeak-built-for-production-1.10.0](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.10.0/hexo-theme-tranquilpeak-built-for-production-1.10.0.zip)
-2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
+1. Download the latest version ready for production use here : [hydexo-1.0.0](https://github.com/ashisherc/hydexo/archive/v1.0.0.zip)
+2. Place the folder in `themes` folder of your Hexo blog
 
 ## Hexo configuration ##
 
-Modify the theme in `_config.yml` by changing `theme` variable  to `tranquilpeak`
-  
+Modify the theme in `_config.yml` by changing `theme` variable  to `hydexo`
+
 If it's your first time using Hexo, please check [Hexo official documentation](https://hexo.io/docs/)
 
 ### Enable post assets folder ###
 
-If you want to take advantage of cover image, thumbnail image, and image gallery features, you have to enable post assets folder by setting `post_asset_folder` to  `true`in `_config.yml`.
+If you want to take advantage of cover image and image gallery features, you have to enable post assets folder by setting `post_asset_folder` to  `true`in `_config.yml`.
 
 ### Disable relative links ###
 
@@ -126,7 +123,7 @@ There is currently an issue on Hexo repository to fix this problem.
 ### Enable RSS feed ###
 
 1. Execute `npm install hexo-generator-feed --save` in your Hexo blog folder  
-2. Add this lines in `_config.yml` :  
+2. Add this lines in `_config.yml` :
 
 ``` yaml
 feed:
@@ -153,7 +150,7 @@ keywords:
 - javascript
 ```
 
-## Tranquilpeak configuration ##
+## Hydexo configuration ##
 
 ### Language configuration ###
 
@@ -173,26 +170,21 @@ Currently, the theme is delivered with :
 If your language is not available, follow this guidelines (E.g : add russian language (ru) :  
 
 1. Set `language` to `ru` in Hexo configuration file `_config.yml`  
-2. Create `ru.yml` file in `theme/tranquilpeak/languages/` folder  
-3. Copy the content of `theme/tranquilpeak/languages/en.yml` and paste it to `ru.yml` file  
+2. Create `ru.yml` file in `theme/hydexo/languages/` folder  
+3. Copy the content of `theme/hydexo/languages/en.yml` and paste it to `ru.yml` file  
 4. Replace all strings in english by their translation in russian  
 5. Complete your description and your job in russian and that's it!  
 
-Otherwise, complete your description and your job in the right language file(s) in `theme/tranquilpeak/languages`.
-
-**Tranquilpeak theme is currently not ready to support multi-languages. It will be in a next release.**
+Otherwise, complete your description and your job in the right language file(s) in `theme/hydexo/languages`.
 
 ### Theme configuration ###
 
-Complete `theme/tranquilpeak/_config.yml` with your information. Read above sections to have more information.
+Complete `theme/hydexo/_config.yml` with your information. Read above sections to have more information.
 
 #### Sidebar
 
 The sidebar is powerful and easily configurable.
-DON'T modify variables name `sidebar`, `title`, `url` and `icon`.  
-Others variables name which refer to the name of a menu or a link can be edited. Example : `menu`, `home`, `categories`, etc...  
-You can add groups of links and links much as you want  
-You just have to respect the indentation : `groups of links` -> `link` -> `title`, `link`, `icon` 
+DON'T modify variables name `sidebar`, `menu`, `author_links`, `title`, `url` and `icon`.  
 
 ``` yaml
 sidebar:
@@ -302,17 +294,14 @@ author:
 |email|Your mail address. This address will be used to get your gravatar image if you activate gravatar option|
 |location|Your location|
 |picture|Your profile picture. Overwritten by your gravatar image if gravatar email is filled|
-|twitter|Your Twitter username without the @. E.g : `tranquilpeak`|
-|google_plus|Your google plus profile id. E.g : `+TranquilPeak` or `123812884128439`|
+|twitter|Your Twitter username without the @. E.g : `ashisherc`|
+|google_plus|Your google plus profile id. E.g : `+yourid` or `123456789000`|
 
 #### Customization
 
 ``` yaml
 # Customization
 sidebar_behavior: 1
-thumbnail_image: true
-thumbnail_image_position: right
-auto_thumbnail_image: true
 cover_image: cover.jpg
 favicon:
 image_gallery: true
@@ -330,19 +319,9 @@ tag_pagination: true
 |auto_thumbnail_image|Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image. Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image and set `autoThumbnailImage` to `false` on a post to overwrite this setting. (Default : `true`)|
 |read_more_message|Message displayed after the `<!-- more -->` comment or after 300 characters in post|
 |go_to_message|Message displayed after the `<!-- more -->` comment or after 300 characters for post with link layout|
-|cover_image|Your blog cover picture. **I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos.** Default image is on AWS S3 and delivered by AWS CloudFront. Otherwise put your image in folder `source/assets/images/` and use relative url : `your-image.png` **Change the default cover image to have an unique blog**|
+|cover_image|Your blog cover picture. You can use CDN to speed up loading your images, you can use this command line tool to upload images to Cloudinary CDN [cloudinary-push](https://github.com/ashisherc/cloudinary-push). Otherwise put your image in folder `source/assets/images/` and use relative url : `your-image.png`|
 |favicon|Your favicon located in folder `source/assets/images/`|
 |image_gallery|Display an image gallery at the end of a post which have `photos` variables. (false: disabled, true: enabled)|
-|archive_pagination|Displaying style of archive pages. (false: pagination disabled, true: pagination enabled)|
-|category_pagination|Displaying style of category pages. (false: pagination disabled, true: pagination enabled)|
-|tag_pagination|Displaying style of tag pages. (false: pagination disabled, true: pagination enabled)|
-
-E.g :  
-A category page look like this with `category_pagination: true` :  
-![archives false](http://d1u9biwaxjngwg.cloudfront.net/docs/1.4.0/ud-archives-true-300.png)  
-
-The same page with `category_pagination: false`:  
-![archives false](http://d1u9biwaxjngwg.cloudfront.net/docs/1.4.0/ud-archives-false-300.png)  
 
 
 #### Integrated services
@@ -391,7 +370,7 @@ sharing_options:
         icon: "fa-foo_bar"
         url: "https://www.foo_bar.com/sharer/sharer.php?u={{post.permalink}}"
 ```
-2. Add a line in the language file that you use (location: `themes/tranquilpeak/languages/`)
+2. Add a line in the language file that you use (location: `themes/hydexo/languages/`)
 ``` yaml
 global:
     share_on_foo_bar: "Share on Foo Bar"
@@ -405,7 +384,7 @@ global:
 
 ### Enable pages ###
 
-Tranquilpeak provides you 3 pages to display all posts title and date by tags, by categories, by date and an about page. To enable one of this pages, 
+Hydexo provides you 3 pages to display all posts title and date by tags, by categories, by date and an about page. To enable one of this pages, 
 read following step.
 
 #### Enable all-categories page
@@ -487,11 +466,11 @@ fields:
 **Standard configuration**
 ``` yml
 algolia:
-  appId: "Z7A3XW4R2I"
-  apiKey: "12db1ad54372045549ef465881c17e743"
-  adminApiKey: "40321c7c207e7f73b63a19aa24c4761b"
+  appId: "appid"
+  apiKey: "your api key"
+  adminApiKey: "your admin api key"
   chunkSize: 5000
-  indexName: "tranquilpeak"
+  indexName: "index name here"
   fields:
     - title
     - date
@@ -505,29 +484,17 @@ algolia:
 
 ### Google Analytics ###
 
-#### Exclude hostname (localhost) while writing articles
-
-While you are writing articles, you need to check the result a lot of times before deploying your site.
-If you have enable Google analytics service, Google will include all requests done, even when hostname is localhost and this can greatly skew the results.
-To overcome this, you have to add a filter on Google Analytics website.
-   
-Follow these steps, to add new filter :
-
-1. Sign in to your Google Analytics account
-2. Select the **Admin** tab and navigate to the **property** in which you want to create the filter **(Account > Property > View)**
-3. In **View** column, click on **Filters** button
-4. Click on **+ NEW FILTER** button
-6. Enter a name for the filter
-7. Select **Custom filter**, **Filter Field** : `Hostname`, **Filter Pattern** :  `(.*?localhost.*?)`
-8. Click on **Save** button
+```yml
+google_analytics_id: UA-0123456789
+```
 
 ## Quick & easy modifications ##
 
 ### Prerequisites ###
 
-Since you are going to edit the theme, you have to install all the necessary to build it after changes : [Installation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#installation)
+Since you are going to edit the theme, you have to install all the necessary to build it after changes : [Installation](https://github.com/ashisherc/hydexo/blob/master/docs/developer.md#installation)
 
-**Run command in theme folder : `hexo-blog/themes/tranquilpeak`**
+**Run command in theme folder : `hexo-blog/themes/hydexo`**
 
 ### Change global style ###
 
@@ -535,14 +502,14 @@ If you want to change font families, font size, sidebar color, things like that,
 
 ### Change code coloration (Highlight.js theme) ###
 
-Tranquilpeak integrate its own highlight.js theme inspired by GitHub. 
+Hydexo has Tranquilpeak highlight.js theme inspired by GitHub. 
 Of course, you can replace it with an other theme found on highlight.js repository. Since Hexo use different CSS class names, all theme are not ready out of the box, but it is very easy to make them compatible. 
 
 Follow these steps :
 
 1. Get your theme here : [Highlight.js theme](https://github.com/isagalaev/highlight.js/tree/master/src/styles) or create yours
 2. Follow guidelines in `source/_css/themes/hljs-custom.scss` file
-3. Build the theme with `npm run prod` or `grunt buildProd`. Learn more about Grunt tasks : [Grunt tasks](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#grunt-tasks)
+3. Build the theme with `npm run prod` or `grunt buildProd`. Learn more about Grunt tasks : [Grunt tasks](https://github.com/ashisherc/hydexo/blob/master/docs/developer.md#grunt-tasks)
 
 ### Customize 404 error page
 
@@ -565,38 +532,6 @@ Finally, you need to tell your server to use `/404.html` (which Hexo generates o
  - [GitHub Pages](https://help.github.com/articles/creating-a-custom-404-page-for-your-github-pages-site/)
  - [Amazon Cloudfront/S3](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html)
 
-
-## Migrating posts ##
-
-### Prerequisites ###
-
-Since you are going to edit the theme, you have to install all the necessary to build it after changes : [Installation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/developer.md#installation)
-
-### v1.3.0 or lower to v1.4.0 or higher ###
-
-If you used Tranquilpeak v1.3.0 or lower, you used maybe the  auto excerpt feature  : If there is no tag `<!-- more -->` in your post, so the excerpt is defined by cut the content after 250 characters.
-  
-Auto excerpt feature doesn't exist anymore since Tranquilpeak v1.4.0. And now, when there is no tag `<-- more -->` and `<!-- excerpt -->` in your post, the post is not cut and it will be displayed entirely on index page. 
-Maybe, you don't want to display entirely all of your old posts. So If you have a lot of posts to edit and you don't want to do to define the excerpt manually, use our script to automate this task.
-  
-With the migration script, the `<!-- excerpt -->` tag will be inserted at the end of the line of each posts which don't have an excerpt tag (more and excerpt).
-
-1. Run `hexo migrate 1.4.0` in your blog directory. 
-2. It will ask you :
-  * The name of the directory that contains all of your post (default: **_posts**) 
-  * The date of your last post written with a version of Tranquil anterior to 1.4.0
-3. Your old posts will be put in **_1.4.0_old_posts** directory and the new posts in **_posts**
-
-#### Known issues
-
-##### The migration stopped after **Checking for posts without `<-- more -->` and `<!-- excerpt -->` tag** step
-
-We don't know if it come from Node.js (from specific version or not) or permissions of the directory which contains posts but follow these steps to fix this issue :
-
-1. Rename your posts directory
-2. Create a directory : **_posts**
-3. Move all of your posts in **_posts** directory
-4. Re-run migration script
  
 ## Writing posts ##
 
@@ -604,13 +539,9 @@ To write articles, you have to use Markdown language. [Here](https://guides.gith
 Please note, there are many different versions of Markdown and some of them are not supported by Hexo.  
 To use tags plugins to highlight code or add Fancybox image, please read [Hexo docs](https://hexo.io/docs/tag-plugins.html)
 
-**I STRONGLY recommend you to use a CDN to speed up loading of pages. There is many free CDN like Cloudinary or you can also use indirectly by using services like Google Photos.**
+**You can use CDN to speed up loading your images, you can use this command line tool to upload images to Cloudinary CDN** [cloudinary-push](https://github.com/ashisherc/cloudinary-push)
 
 ### Front-matter settings ###
-
-Tranquilpeak introduces new variables to give you a lot of possibilities.  
-
-**Since Tranquilpeak 1.7, if you declare some photos in `photos` variable with a caption or an thumbnail url, please use `gallery` variable name instead of `photos` otherwise Hexo will generate wrong url for these images in open graph meta tag.**
   
 Example :  
 ``` markdown
@@ -619,15 +550,11 @@ keywords:
 - javascript
 - hexo
 clearReading: true
-thumbnailImage: image-1.png
-thumbnailImagePosition: bottom
-autoThumbnailImage: yes
 metaAlignment: center
 coverImage: image-2.png
 coverCaption: "A beautiful sunrise"
 coverMeta: out
 coverSize: full
-coverImage: image-2.png
 gallery:
     - image-3.jpg "New York"
     - image-4.png "Paris"
@@ -657,29 +584,13 @@ actions: false
 |actions|Disable post actions (navigation, share links).|
 
 Example: 
-A post on index page will look like this with :`thumbnailImagePosition` set to `bottom`:  
-![thumbnail-image-position-bottom](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/TIP-bottom-400.jpg)  
-  
-The same with : `thumbnailImagePosition` set to `right`:  
-![thumbnail-image-position-right](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/TIP-right-400.png)  
-  
-The same with : `thumbnailImagePosition` set to `left`:  
-![thumbnail-image-position-left](https://s3-ap-northeast-1.amazonaws.com/tranquilpeak-hexo-theme/docs/1.4.0/TIP-left-400.png)  
-
-
 
 **The relative path of images entered is : `source/_posts/{YOUR_POST_TITLE}/`, you just have to enter the name of the image without domain name and path like written just above.  
 Of course, you can set external url.**
 
 ### Define post excerpt ###
 
-Tranquilpeak v1.4.0 introduce a new way to define post excerpt with `<!-- excerpt -->` comment. Use 
-- `<!-- more -->` to define post excerpt and keep the post excerpt in the post content
-- `<!-- excerpt -->` to define post excerpt and remove the post excerpt of the post content
-
-### Display all post content ###
-
-**To display all post content on index page, don't put `<!-- more -->` and `<!-- excerpt -->` comment in your post content.**
+Install [hexo-auto-excerpt](https://github.com/ashisherc/hexo-auto-excerpt)
 
 ### Display table of contents ###
 
@@ -690,8 +601,8 @@ Here is what looks like the table of contents generated:
   
 ### Tags ###
 
-Tranquilpeak introduce new tags to display alert messages, images in full width and create beautiful galleries.
-**DON'T use anymore fancybox tag**. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
+Hydexo has new tags from tranquilpeak to display alert messages, images in full width and create beautiful galleries.
+**DON'T use anymore fancybox tag**. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image)
 
 #### Alert
 
@@ -765,7 +676,7 @@ E.g : `{% image fancybox right clear group:travel image2.png http://google.fr/im
 
 |Argument|Description|
 |---|---| 
-|Classes (optional)|You can add css classes to stylize the image. Separate class with whitespace. Tranquilpeak integrate many css class to create nice effects :  <ul><li><strong>fancybox</strong> : Generate a fancybox image.</li><li><strong>nocaption</strong> : Caption of the image will not be displayed.</li><li><strong>left</strong> : Image will float at the left.</li><li><strong>right</strong> : Image will float at the right.</li><li><strong>center</strong> : Image will be at center.</li><li><strong>fig-20</strong> : Image will take 20% of the width of post width and automatically float at left.</li><li><strong>fig-25</strong> : Image will take 25% of the width of post width and automatically float at left.</li><li><strong>fig-33</strong> : Image will take 33% of the width of post width and automatically float at left.</li><li><strong>fig-50</strong> : Image will take 50% of the width of post width and automatically float at left.</li><li><strong>fig-75</strong> : Image will take 75% of the width of post width and automatically float at left.</li><li><strong>fig-100</strong> : Image will take 100% of the width of post width.</li><li><strong>clear</strong> : Add a div with `clear:both;` style attached after the image to retrieve the normal flow of the post.</li></ul>|
+|Classes (optional)|You can add css classes to stylize the image. Separate class with whitespace. Hydexo from tranquilpeak integrates many css class to create nice effects :  <ul><li><strong>fancybox</strong> : Generate a fancybox image.</li><li><strong>nocaption</strong> : Caption of the image will not be displayed.</li><li><strong>left</strong> : Image will float at the left.</li><li><strong>right</strong> : Image will float at the right.</li><li><strong>center</strong> : Image will be at center.</li><li><strong>fig-20</strong> : Image will take 20% of the width of post width and automatically float at left.</li><li><strong>fig-25</strong> : Image will take 25% of the width of post width and automatically float at left.</li><li><strong>fig-33</strong> : Image will take 33% of the width of post width and automatically float at left.</li><li><strong>fig-50</strong> : Image will take 50% of the width of post width and automatically float at left.</li><li><strong>fig-75</strong> : Image will take 75% of the width of post width and automatically float at left.</li><li><strong>fig-100</strong> : Image will take 100% of the width of post width.</li><li><strong>clear</strong> : Add a div with `clear:both;` style attached after the image to retrieve the normal flow of the post.</li></ul>|
 |Group (optional)| Name of a group, used to create a gallery. **Only for image with `fancybox` css class**|
 |Orignal image| Path to the original image.|
 |Thumbnail image (optional)| Path to the thumbnail image. If empty, the orignal image will be displayed.|
@@ -820,10 +731,6 @@ E.g : `{% wide_image http://google.fr/images/image125.png "A beautiful sunrise" 
 |---|---| 
 |Image|Path to the original image.|
 |Title (optional)|Title of image displayed in a caption under image. `Alt` HTML attribute will use this title. E.g : `"A beautiful sunrise"`.| 
-
-#### Fancybox
-
-`fancybox` tag is deprecated since Tranquilpeak 1.3. Please use `image` tag with `fancybox` class to generate them. More information here : [Image tag](#image) 
 
 ## Running ##
 

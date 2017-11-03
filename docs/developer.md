@@ -1,8 +1,8 @@
 # Developer documentation #
 
-This documentation will help you to understand Tranquilpeak Hexo theme code.  
+This documentation will help you to understand Hydexo Hexo theme code.  
 
-If you want to report a bug or ask a question, [create an issue](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/issues/new).
+If you want to report a bug or ask a question, [create an issue](https://github.com/ashisherc/hydexo/issues/new).
 
 ## Summary ##
 
@@ -30,8 +30,8 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## General ##
 
-- **Author** : Louis Barranqueiro
-- **Version** : 1.10.0
+- **Author** : Louis Barranqueiro, Ashish Prajapati
+- **Version** : 1.0.0
 - **Compatibility** : Node v4 or later, Hexo v3.0.0 or later
 
 ## Requirements ##
@@ -43,16 +43,15 @@ If you want to report a bug or ask a question, [create an issue](https://github.
 
 ## Installation ##
 
-1. Run `git clone https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git`
-2. Rename the folder in `tranquilpeak` and place it in `themes` folder of your Hexo blog
-3. Modify the theme in `_config.yml` by changing `theme` variable  to `tranquilpeak`
-4. Complete `theme/tranquilpeak/_config.yml` with your information by following directives in comments
-5. Go in `theme/tranquilpeak` folder with `cd themes/tranquilpeak`
+1. Run `git clone https://github.com/ashisherc/hydexo.git`
+3. Modify the theme in `_config.yml` by changing `theme` variable  to `hydexo`
+4. Complete `theme/hydexo/_config.yml` with your information by following directives in comments
+5. Go in `theme/hydexo` folder with `cd themes/hydexo`
 6. Install [requirements](#requirements)
 7. Run `npm install` to install [NPM dependencies](#npm-dependencies)
 8. Run `bower install` to install [Bower dependencies](#bower-dependencies) 
 
-If you want to configure the theme, please follow the [user documentation](https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md)  
+If you want to configure the theme, please follow the [user documentation](https://github.com/ashisherc/hydexo/blob/master/docs/user.md)  
 
 ## Code style ##
 
@@ -67,7 +66,7 @@ grunt eslint
 ## Code structure ##
 
 ```
-tranquilpeak
+hydexo
 ├── .github
 ├── docs
 ├── languages
@@ -155,7 +154,7 @@ If you have local fonts, place them in this folder and import them in `source/_c
 ```
 |File|Description|
 |---|---|
-|cover.png|Default background cover of the blog|
+|cover.png|Default background cover of the sidebar and about page.|
   
 Contains all images of the theme.  
 
@@ -189,7 +188,7 @@ Contains all images of the theme.
 |image-gallery.js|Resize all images of an image-gallery|
 |post-bottom-bar.js|Hide the post bottom bar when the post footer is visible by the user, and vice versa|
 |share-options.js|Open and close the share-options bar|
-|sidebar.js|Open and close the sidebar by swiping the sidebar and the blog and vice versa|
+|sidebar.js|Open and close the sliding sidebar|
 |smartresize.js|Debouncing function from [John Hann](https://github.com/unscriptable)|
 |tabbed-codeblocks.js|Animate tabs of tabbed code blocks|
 |tags-filter.js|Filter posts by using their tags on archives page : `/tags`|
@@ -227,24 +226,24 @@ Use `npm run <script_name>` to run one of these scripts. E.g : `npm run start`
 
 ``` javascript
 // Js files to inject in `layout/_partial/script.ejs`
-var tranquilpeakJsFilesToInject = [
+var hydexoJsFilesToInject = [
     'jquery.js',
     'jquery.fancybox.js',
     'jquery.fancybox-thumbs.js',
-    'tranquilpeak.js'
+    'hydexo.js'
 ];
 // Css files to inject in `layout/_partial/head.ejs`
-var tranquilpeakCssFilesToInject = [
+var hydexoCssFilesToInject = [
     'font-awesome.css',
     'jquery.fancybox.css',
     'jquery.fancybox-thumbs.css',
-    'tranquilpeak.css'
+    'hydexo.css'
 ];
 ```
 |Variable|Description|
 |---|---|
-|tranquilpeakJsFilesToInject|Files injected in `layout/_partial/script.ejs` (developement environment)|
-|tranquilpeakCssFilesToInject|Files injected in`layout/_partial/head.ejs` (developement environment)|
+|hydexoJsFilesToInject|Files injected in `layout/_partial/script.ejs` (developement environment)|
+|hydexoCssFilesToInject|Files injected in`layout/_partial/head.ejs` (developement environment)|
 
 In the production environment, these javascript and stylesheets files are concatenated and minified into 1 javascript file and 1 stylesheet file and linked to their respective views.
 
@@ -254,12 +253,12 @@ In the production environment, these javascript and stylesheets files are concat
 |---|---|
 |bower|Copy all needed files by types from bower dependencies|
 |clean|Delete `source/assets` folder|
-|concat|<ul><li>devJs : Concat all javascript files located in `source/_js/` into 1 file : `source/assets/js/tranquilpeak.js`</li><li>prodCss : Concat all stylesheets files located in `source/assets/css/` into 1 file : `source/assets/css/style.css`</li><li>prodJs : Concat all javascript listed in `tasks/pipeline.js` in 1 file : `source/assets/js/script.js`</li></ul>|
+|concat|<ul><li>devJs : Concat all javascript files located in `source/_js/` into 1 file : `source/assets/js/hydexo.js`</li><li>prodCss : Concat all stylesheets files located in `source/assets/css/` into 1 file : `source/assets/css/style.css`</li><li>prodJs : Concat all javascript listed in `tasks/pipeline.js` in 1 file : `source/assets/js/script.js`</li></ul>|
 |cssmin|Minify `source/assets/cssstyle.css` file in : `source/assets/cssstyle.min.css`|
 |exec|<ul><li>eslint : run `eslint .`</li></ul>|
-|replace|<ul><li>linker : Replace `EJS_ENDTAG` string to resolve a problem of ejs escaping with sails-linker tasks</li><li>cssFancybox : Resolve path of images in fancybox.css. Impossible to use an other plugin to do that because in the bower fancybox packages, css files and images are in the same folder and that not the case in assets folder.</li><li>cssTranquilpeak : Resolve path of images and fonts in tranquilpeak.css.</li></ul>|
+|replace|<ul><li>linker : Replace `EJS_ENDTAG` string to resolve a problem of ejs escaping with sails-linker tasks</li><li>cssFancybox : Resolve path of images in fancybox.css. Impossible to use an other plugin to do that because in the bower fancybox packages, css files and images are in the same folder and that not the case in assets folder.</li><li>cssHydexo : Resolve path of images and fonts in hydexo.css.</li></ul>|
 |sails-linker|<ul><li>devJs : Link all javascript files listed in `tasks/pipeline.js`  to `layout/_partial/script.ejs`</li><li>devCss : Link all stylesheets files listed in `tasks/pipeline.js`  to `layout/_partial/head.ejs`</li><li>prodJs : Link `source/assets/js/script.min.js` file in `layout/_partial/script.ejs`</li><li>prodCss : Link `source/assets/js/style.min.css` file in `layout/_partial/head.ejs`</li></ul>|
-|sass|Compile `source/_css/tranquilpeak.scss` file in `source/assets/css/tranquilpeak.css`|
+|sass|Compile `source/_css/hydexo.scss` file in `source/assets/css/hydexo.css`|
 |sync|Synchronize images from `source/_images` to `source/assets/images` and fonts from `source/_fonts` to `source/assets/fonts`|
 |watch|Watch assets from `source/_*/**/*` folder to detect changes and launch `syncAssets` task|
 
