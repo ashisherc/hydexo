@@ -63,7 +63,7 @@ The documentation for Hydexo is in progress, meanwhile you can go through this d
 
 **Please read [user documentation](https://github.com/ashisherc/hydexo/blob/master/docs/user.md), it's short and useful to discover all features and possibilities of the theme, especially the  [writing posts](https://github.com/ashisherc/hydexo/blob/master/docs/user.md#writing-posts) section**
 
-1. Download the latest version ready for production use here : [hydexo-1.0.0](https://github.com/ashisherc/hydexo/archive/v1.0.0.zip)
+1. Download the latest version ready for production use here : [hydexo-1.0.1](https://github.com/ashisherc/hydexo/archive/v1.0.1.zip)
 2. Follow [user documentation](https://github.com/ashisherc/hydexo/blob/master/docs/user.md) to install and configure the theme
 
 ## Live Blog ##
